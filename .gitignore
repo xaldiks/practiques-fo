@@ -1,0 +1,10 @@
+# Ignore
+*
+
+# Allow
+!sesion*.c
+!S?/
+!S?/sesion?/
+!S?/sesion?/*/
+!S2/sesion?/*/source/
+!.gitignore
