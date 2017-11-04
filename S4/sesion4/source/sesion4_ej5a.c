@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "libs/colours.h"
 
 #define BASTOS 0
 #define ESPADAS 1
@@ -19,8 +20,8 @@ int main() {
 	printf("Carta (figura,palo): ");
 	scanf("(%c,%c)%*c", &fig, &pal);
 
-	if (fig <= 'z') fig = fig + 'A';
-	switch (fig) {
+	if ((fig >= 'a') && (fig <= 'z')) fig = fig - 'a' + 'A';
+	/* switch (fig) {
 		case 'R':
 			c.fig = 12;
 			break;
@@ -30,6 +31,27 @@ int main() {
 		case 'S':
 			c.fig = 10;
 			break;	
+	} */
+
+	printf("(%c,", fig);
+
+	if ((pal >= 'a') && (pal <= 'z')) pal = pal - 'a' + 'A';
+	switch (pal) {
+		case 'O':
+			cambiar_color(YELLOW);
+			break;
+		case 'C':
+			cambiar_color(RED);
+			break;
+		case 'E':
+			cambiar_color(CYAN);
+			break;
+		case 'B':
+			cambiar_color(GREEN);
+			break;
 	}
+	printf("%c", pal);
+	cambiar_color(DEFAULT);
+	printf(")\n");
 
 }
