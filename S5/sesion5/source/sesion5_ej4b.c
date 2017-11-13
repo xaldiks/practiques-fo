@@ -14,7 +14,7 @@ int main()
 	printf("Vector inicial: ");                                                                                                                                                                       
     for (i = 0; i < vect.nelem; i++) {                                                                                                                                                                        
     	if (i == vect.nelem - 1) {                                                                                                                                                                        
-        	printf("%d\n", vect.vector[i]);                                                                                                                                                           
+        	printf("%d\n\n", vect.vector[i]);                                                                                                                                                           
             break;                                                                                                                                                                                    
         }                                                                                                                                                                                                 
         printf("%d, ", vect.vector[i]);                                                                                                                                                                   
@@ -32,23 +32,30 @@ int main()
 		printf("Se ha encontrado el valor %d en la posicion %d del vector\n", valor, i);
 	}
 	else {
-		j = vect.nelem;
-		while ((j > i) && (vect.nelem <= DIM)) {
-			vect.vector[j] = vect.vector[j - 1];
-			j--;
+		printf("No se ha encontrado el valor %d en el vector\n", valor);
+		if (vect.nelem == DIM) {
+			printf("El vector ya tiene %d elementos y esta lleno.\n", DIM);
+			printf("No se puede insertar el nuevo valor.\n");
 		}
-		vect.vector[i] = valor;
-		vect.nelem++;
+		else {	
+			printf("Procedemos a insertarlo en la posicion %d\n\n", i);
+
+			j = vect.nelem;
+			while ((j > i) && (vect.nelem <= DIM)) {
+				vect.vector[j] = vect.vector[j - 1];
+				j--;
+			}
+			vect.vector[i] = valor;
+			vect.nelem++;
+		
+			printf("Vector: ");
+			for (i = 0; i < vect.nelem; i++) {
+				if (i == vect.nelem - 1) {
+					printf("%d\n", vect.vector[i]);                                                                                                                                                           
+            		break;                                                                                                                                                                                    
+        		}
+				printf("%d, ", vect.vector[i]);
+			}
+		}
 	}
-	
-	printf("Vector: ");
-	for (i = 0; i < vect.nelem; i++) {                                                                                                                                                                        
-    	if (i == vect.nelem - 1) {                                                                                                                                                                        
-        	printf("%d\n", vect.vector[i]);                                                                                                                                                           
-            break;                                                                                                                                                                                    
-        }                                                                                                                                                                                                 
-        printf("%d, ", vect.vector[i]);                                                                                                                                                                   
-    }
-
-
 }

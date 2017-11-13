@@ -36,6 +36,17 @@ int main()
 		}
 	}
 	
+	printf("Lista1: ");
+	for (i = 0; i < lista1.nmat-1; i++) {
+		printf("%d-%c%c%c, ", lista1.lmat[i].num, lista1.lmat[i].letras[0], lista1.lmat[i].letras[1], lista1.lmat[i].letras[2]);
+	}	
+	printf("%d-%c%c%c\n", lista1.lmat[i].num, lista1.lmat[i].letras[0], lista1.lmat[i].letras[1], lista1.lmat[i].letras[2]);
+	printf("Lista2: ");
+	for (i = 0; i < lista2.nmat-1; i++) {
+		printf("%d-%c%c%c, ", lista2.lmat[i].num, lista2.lmat[i].letras[0], lista2.lmat[i].letras[1], lista2.lmat[i].letras[2]);
+	}	
+	printf("%d-%c%c%c\n\n", lista2.lmat[i].num, lista2.lmat[i].letras[0], lista2.lmat[i].letras[1], lista2.lmat[i].letras[2]);
+	
 	printf("Lista union: ");
 	for (i = 0; i < lunion.nmat-1; i++) {
 		printf("%d-%c%c%c, ", lunion.lmat[i].num, lunion.lmat[i].letras[0], lunion.lmat[i].letras[1], lunion.lmat[i].letras[2]);
