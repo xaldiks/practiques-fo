@@ -6,5 +6,8 @@
 !S?/
 !S?/sesion?/
 !S?/sesion?/*/
-!S2/sesion?/*/source/
+!S?/sesion?/*/source/
 !.gitignore
+!Projecte/
+!Projecte/*/
+!disseny.c
